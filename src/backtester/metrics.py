@@ -10,3 +10,9 @@ def total_return(equity: pd.Series) -> float:
     start = equity.iloc[0]
     end = equity.iloc[-1]
     return end / start - 1
+
+def sharpe_ratio(equity: pd.Series) -> float:
+    daily_returns = equity.pct_change()
+    daily_average = daily_returns.mean()
+    daily_std = daily_returns.std()
+    return (daily_average/daily_std) * 252 ** 0.5
