@@ -3,8 +3,9 @@ import pandas as pd
 from backtester.portfolio import Portfolio
 
 
-def run(prices: pd.DataFrame, strategy, cash: float) -> pd.Series:
-    portfolio = Portfolio(cash)
+def run(prices: pd.DataFrame, strategy, cash: float,
+        fee_rate: float = 0.0, slippage_rate: float = 0.0) -> pd.Series:
+    portfolio = Portfolio(cash, fee_rate, slippage_rate)
     pending = "hold"  
     equity = []
 
