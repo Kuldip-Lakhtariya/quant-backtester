@@ -3,7 +3,7 @@ from backtester.engine import run
 from backtester.metrics import max_drawdown, total_return, sharpe_ratio
 from backtester.strategy import BuyAndHold, MovingAverageCrossover
 
-FEE_RATE = 0.001        
+FEE_RATE = 0.00135      # estimate for Groww delivery: brokerage + STT + stamp + exchange + GST
 SLIPPAGE_RATE = 0.0005  
 
 prices = load_prices("data/reliance_daily.csv")
