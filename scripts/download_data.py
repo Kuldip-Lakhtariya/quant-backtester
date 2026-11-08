@@ -9,4 +9,7 @@ def download(ticker: str, start: str, end: str, out_path: str) -> None:
 
 
 if __name__ == "__main__":
-    download("RELIANCE.NS", "2015-01-01", "2026-10-01", "data/reliance_daily.csv")
+    # Reliance is already downloaded.Comment it, so our results stay the same.
+    # download("RELIANCE.NS", "2015-01-01", "2026-10-01", "data/reliance_daily.csv")
+    download("TCS.NS", "2015-01-01", "2026-10-01", "data/tcs_daily.csv")
+    download("ZYDUSLIFE.NS", "2015-01-01", "2026-10-01", "data/zydus_daily.csv")
