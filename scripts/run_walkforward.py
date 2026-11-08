@@ -1,3 +1,5 @@
+import sys
+
 from backtester.data import load_prices
 from backtester.metrics import total_return
 from backtester.strategy import BuyAndHold, MovingAverageCrossover
@@ -8,7 +10,10 @@ FEE_RATE = 0.00135
 SLIPPAGE_RATE = 0.0005
 PAIRS = [(10, 50), (20, 50), (20, 100), (30, 100), (50, 200)]
 
-prices = load_prices("data/reliance_daily.csv")
+name = sys.argv[1] if len(sys.argv) > 1 else "reliance"
+prices = load_prices(f"data/{name}_daily.csv")
+print(f"Stock: {name}")
+
 windows = make_windows(len(prices), train_size=756, test_size=252)
 
 print(f"{'Win':>3} {'Pair':>9}  {'Test period':<25} {'Crossover':>10} {'Buy-hold':>9}")
